@@ -84,10 +84,10 @@
 .creation figcaption > span:last-child { font-size: 8px; color: #a3a7b6; letter-spacing: .12em; }
 .workspace { background: linear-gradient(160deg, #151723, #10121a 55%, #0e111a); border-block: 1px solid var(--line); position: relative; }
 .anchor-alias { position: absolute; top: 0; }
-.workspace-tabs { display: flex; gap: 30px; margin-bottom: 22px; overflow-x: auto; border-bottom: 1px solid var(--line); scrollbar-width: thin; }
-.workspace-tabs button { position: relative; flex-shrink: 0; padding: 12px 0 17px; border: none; border-radius: 0; background: none; color: #a4a8b8; font-size: 11px; white-space: nowrap; }
-.workspace-tabs button[aria-selected="true"] { color: #e0e4ff; }
-.workspace-tabs button[aria-selected="true"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: #a8b6ff; }
+.section-tabs { display: flex; gap: 30px; margin-bottom: 22px; overflow-x: auto; border-bottom: 1px solid var(--line); scrollbar-width: thin; }
+.section-tabs button { position: relative; flex-shrink: 0; padding: 12px 0 17px; border: none; border-radius: 0; background: none; color: #a4a8b8; font-size: 11px; white-space: nowrap; }
+.section-tabs button[aria-selected="true"] { color: #e0e4ff; }
+.section-tabs button[aria-selected="true"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: #a8b6ff; }
 .workspace-frame { border: 1px solid #373b4e; border-radius: 8px; overflow: hidden; box-shadow: 0 35px 80px rgba(0, 0, 0, .32); background: #101114; }
 .workspace-panel { aspect-ratio: 1440 / 1280; display: grid; place-items: center; }
 .workspace-panel img { display: block; width: 100%; height: 100%; object-fit: contain; }
@@ -97,9 +97,9 @@
 .site-page .benchmark-heading h3, .site-page .supported-models > h3 { font-size: 23px; font-weight: 500; letter-spacing: -.035em; }
 .benchmark-heading > span { color: #a2a9bb; font-size: 11px; }
 .benchmark-table-wrap { overflow-x: auto; border: 1px solid #30364a; border-radius: 8px; scrollbar-width: thin; }
-.site-page .benchmark-table { width: 100%; min-width: 500px; margin: 0; border-collapse: collapse; font-size: 13px; }
+.site-page .benchmark-table { width: 100%; min-width: 500px; margin: 0; border-collapse: collapse; table-layout: fixed; font-size: 13px; }
 .benchmark-table th, .benchmark-table td { padding: 14px 24px; border: 0; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
-.benchmark-table th:first-child { text-align: left; }
+.benchmark-table th:first-child { width: 40%; text-align: left; }
 .benchmark-table thead th { background: #1b2030; color: #aeb7d2; font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; }
 .benchmark-table tbody th { font-weight: 400; }
 .benchmark-table tbody td { font-variant-numeric: tabular-nums; color: #b1b7c6; }
@@ -235,15 +235,15 @@
     .creation figcaption { flex-direction: column; align-items: start; gap: 6px; font-size: 11px; padding-top: 11px; }
     .creation figcaption > span:last-child { font-size: 7px; }
     .creation-play { width: 30px; height: 30px; right: 12px; bottom: 12px; }
-    .workspace-tabs { gap: 23px; }
-    .workspace-tabs button { font-size: 10px; }
+    .section-tabs { gap: 23px; }
+    .section-tabs button { font-size: 10px; }
     .workspace-caption { font-size: 8px; line-height: 1.8; }
     .benchmark-results { margin-top: 45px; }
     .benchmark-heading { flex-direction: column; gap: 10px; margin-bottom: 20px; }
     .site-page .benchmark-heading h3, .site-page .supported-models > h3 { font-size: 21px; }
-    .site-page .benchmark-table { min-width: 0; table-layout: fixed; font-size: 11px; }
+    .site-page .benchmark-table { min-width: 0; font-size: 11px; }
     .benchmark-table th, .benchmark-table td { padding: 12px 8px; }
-    .benchmark-table th:first-child { width: 40%; white-space: normal; line-height: 1.6; }
+    .benchmark-table th:first-child { white-space: normal; line-height: 1.6; }
     .benchmark-table thead th { font-size: 8px; letter-spacing: .04em; }
     .speedup { padding: 4px 5px; font-size: 9px; }
     .benchmark-explanation, .model-groups { grid-template-columns: 1fr; gap: 25px; }
