@@ -8,7 +8,7 @@
     const updateMotionButton = () => {
         const playing = !background.paused;
         motionToggle.setAttribute("aria-pressed", String(playing));
-        motionToggle.setAttribute("aria-label", playing ? "Pause background video" : "Play background video");
+        motionToggle.setAttribute("aria-label", playing ? motionToggle.dataset.pauseLabel : motionToggle.dataset.playLabel);
         motionToggle.firstElementChild.textContent = playing ? "Ⅱ" : "▶";
     };
     const syncBackground = () => {
@@ -75,7 +75,7 @@
         document.body.style.overflow = "hidden";
         if (type === "video") media.play().catch(() => {});
     };
-    document.querySelectorAll("[data-play-film]").forEach(button => button.addEventListener("click", () => openMedia(dialog.dataset.filmSource, "video", "Made with Nox")));
+    document.querySelectorAll("[data-play-film]").forEach(button => button.addEventListener("click", () => openMedia(dialog.dataset.filmSource, "video", dialog.dataset.filmTitle)));
     document.querySelectorAll("[data-lightbox]").forEach(link => link.addEventListener("click", event => {
         event.preventDefault();
         openMedia(link.href, link.dataset.mediaType, link.dataset.mediaTitle);
