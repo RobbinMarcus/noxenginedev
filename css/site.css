@@ -102,6 +102,54 @@
 .workspace-caption { margin-top: 18px !important; text-align: center; font-size: var(--text-small); line-height: 1.8; color: #b0b4c3; }
 .performance { padding-bottom: 0; }
 .benchmark-results { margin-top: 40px; scroll-margin-top: 24px; }
+.benchmark-chart { --chart-comfy: #75819b; --chart-nox: #d0d9ed; position: relative; margin-bottom: 48px; padding: 28px 24px 20px; border: 1px solid #30364a; border-radius: 8px; background: #10141e; }
+.benchmark-chart-controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 26px; }
+.benchmark-chart-toggle { display: inline-flex; align-items: center; gap: 9px; padding: 9px 14px; border: 1px solid #3b4358; border-radius: 5px; background: transparent; color: #aeb5c7 !important; font-size: var(--text-ui) !important; }
+.benchmark-chart-toggle-check { display: inline-grid; place-items: center; width: 14px; height: 14px; border: 1px solid #69728a; border-radius: 3px; color: transparent; font-size: 11px; }
+.benchmark-chart-toggle[aria-pressed="true"] { color: #e0e7ff !important; border-color: var(--chart-nox); background: #a8bfff12; }
+.benchmark-chart-toggle[aria-pressed="true"] .benchmark-chart-toggle-check { color: #11182a; background: var(--chart-nox); border-color: var(--chart-nox); }
+.benchmark-chart-color-pair { display: inline-flex; align-items: end; gap: 3px; margin-left: 3px; opacity: .5; }
+.benchmark-chart-color-pair i { width: 7px; height: 17px; border-radius: 2px; }
+.benchmark-chart-color-pair i:last-child { height: 12px; }
+.benchmark-chart-toggle[aria-pressed="true"] .benchmark-chart-color-pair { opacity: 1; }
+.benchmark-chart-toggle:hover { border-color: #a5b5df; }
+.benchmark-chart-key { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; margin-bottom: 12px; color: #c5ccdf; font-size: var(--text-small); }
+.benchmark-chart-key > span { display: inline-flex; align-items: center; gap: 8px; }
+.benchmark-chart-engine-toggle { padding: 7px 10px; font-size: var(--text-small) !important; }
+.benchmark-chart-engine-toggle[aria-pressed="false"] .benchmark-chart-swatch { opacity: .35; }
+.benchmark-chart[data-engines="nox"] .benchmark-chart-color-pair .benchmark-chart-comfy, .benchmark-chart[data-engines="comfy"] .benchmark-chart-color-pair .benchmark-chart-nox, .benchmark-chart[data-engines=""] .benchmark-chart-color-pair i { opacity: .2; }
+.benchmark-chart-swatch { width: 10px; height: 10px; border-radius: 2px; }
+.benchmark-chart-comfy { fill: var(--chart-comfy); background: var(--chart-comfy); }
+.benchmark-chart-nox { fill: var(--chart-nox); background: var(--chart-nox); }
+.benchmark-chart-key .benchmark-chart-axis-title { margin-left: auto; color: #a2a9bb; }
+.benchmark-chart-plot { display: grid; grid-template-columns: 44px minmax(0, 1fr); }
+.benchmark-chart-axis { display: block; width: 44px; height: 432px; }
+.benchmark-chart-axis text, .benchmark-chart-svg text { fill: #a2aabc; font-family: inherit; font-size: 11px; font-variant-numeric: tabular-nums; }
+.benchmark-chart-scroll { min-width: 0; overflow-x: auto; scrollbar-width: thin; scrollbar-color: #4e5a78 #10141e; overscroll-behavior-x: contain; }
+.benchmark-chart-svg { display: block; max-width: none; }
+.benchmark-chart-grid { stroke: #c1c9e218; stroke-width: 1; }
+.benchmark-chart-baseline { stroke: #6b7695; stroke-width: 1; }
+.benchmark-chart-band { fill: #b9c5ff04; }
+.benchmark-chart-hit { fill: transparent; stroke: transparent; }
+.benchmark-chart-pair { cursor: pointer; }
+.benchmark-chart-pair:hover .benchmark-chart-hit, .benchmark-chart-pair:focus .benchmark-chart-hit { fill: #b9c5ff0b; }
+.site-page .benchmark-chart-pair:focus-visible { outline: none; }
+.benchmark-chart-pair:focus-visible .benchmark-chart-hit { stroke: #c8d4ff; stroke-width: 1.5; }
+.benchmark-chart-svg .benchmark-chart-gpu-label { font-size: 10px; fill: #8e98b0; }
+.benchmark-chart-svg .benchmark-chart-pipeline-label { fill: #c5cde0; }
+.benchmark-chart-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; margin-top: 12px; }
+.benchmark-chart-footer p { color: #a2a9bb; font-size: var(--text-small); line-height: 1.7; }
+.benchmark-chart-empty { min-height: 320px; display: grid; place-items: center; color: var(--muted); text-align: center; }
+.benchmark-chart-tooltip { position: absolute; z-index: 3; width: 238px; max-width: calc(100% - 16px); padding: 16px; border: 1px solid #4c5878; border-radius: 6px; background: #171d2c; box-shadow: 0 12px 32px #0006; pointer-events: none; font-size: var(--text-small); }
+.benchmark-chart-tooltip > strong { display: block; font-weight: 500; color: #eef1ff; }
+.benchmark-chart-tooltip-gpu { display: block; color: #a8b2cc; margin: 5px 0 14px; }
+.benchmark-chart-tooltip-row { display: flex; justify-content: space-between; gap: 16px; margin-top: 9px; color: #d6ddee; }
+.benchmark-chart-tooltip-row > span { display: inline-flex; align-items: center; gap: 8px; }
+.benchmark-chart-tooltip-row b { font-variant-numeric: tabular-nums; font-weight: 500; }
+.benchmark-chart-tooltip-comfy > span::before, .benchmark-chart-tooltip-nox > span::before { content: ""; width: 8px; height: 8px; border-radius: 2px; }
+.benchmark-chart-tooltip-comfy > span::before { background: var(--chart-comfy); }
+.benchmark-chart-tooltip-nox > span::before { background: var(--chart-nox); }
+.benchmark-chart-tooltip-speedup { border-top: 1px solid #c1c9e21c; padding-top: 10px; color: #c9d2e9; }
 .benchmark-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
 .site-page .benchmark-heading h3, .site-page .supported-models > h3 { font-size: 23px; font-weight: 500; letter-spacing: -.035em; }
 .benchmark-heading > span { color: #a2a9bb; font-size: var(--text-small); line-height: 1.6; }
@@ -249,6 +297,11 @@
     .creation-play { width: 30px; height: 30px; right: 12px; bottom: 12px; }
     .section-tabs { gap: 23px; }
     .benchmark-results { margin-top: 45px; }
+    .benchmark-chart { padding: 20px 12px 16px; margin-bottom: 36px; }
+    .benchmark-chart-controls { gap: 8px; margin-bottom: 22px; }
+    .benchmark-chart-toggle { gap: 7px; padding: 9px 8px; font-size: var(--text-small) !important; }
+    .benchmark-chart-key { gap: 12px 18px; }
+    .benchmark-chart-key .benchmark-chart-axis-title { flex-basis: 100%; margin-left: 0; }
     .benchmark-heading { flex-direction: column; gap: 10px; margin-bottom: 20px; }
     .site-page .benchmark-heading h3, .site-page .supported-models > h3 { font-size: 21px; }
     .site-page .benchmark-table { min-width: 0; font-size: var(--text-small); }
