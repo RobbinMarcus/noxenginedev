@@ -238,6 +238,20 @@
 .site-page .prose figure { display: block; margin: 32px 0; }
 .prose img, .prose video { max-width: 100%; height: auto; border-radius: 6px; }
 .prose video { display: block; }
+.site-page .image-compare { margin: 40px auto; }
+.image-compare-slider { --divider-width: 2px; --divider-color: var(--ink); --default-handle-color: var(--ink); --default-handle-opacity: 1; --default-handle-width: 56px; display: block; width: 100%; border-radius: 6px; overflow: hidden; outline-offset: 4px; }
+.site-page .prose .image-compare-side { display: block; position: relative; margin: 0; }
+.prose .image-compare-side img, .prose .image-compare-side video { display: block; width: 100%; border-radius: 0; }
+.video-compare-controls { display: flex; align-items: center; gap: 8px; margin-top: 12px; }
+.site-page .video-compare-controls button { display: inline-flex; align-items: center; justify-content: center; min-width: 36px; height: 32px; margin: 0; padding: 0 12px; border: 1px solid #3b4358; border-radius: 5px; background: transparent; color: #c5ccdf; font-size: var(--text-small); font-weight: 600; line-height: 1; }
+.site-page .video-compare-controls button:hover { border-color: var(--accent); color: var(--ink); }
+.site-page .video-compare-controls .video-compare-play { min-width: 64px; }
+.video-compare-scrub { flex: 1; min-width: 0; margin: 0; accent-color: var(--accent); }
+.video-compare-frame { min-width: 72px; color: var(--muted); font-size: var(--text-small); font-variant-numeric: tabular-nums; text-align: right; }
+.image-compare-label { position: absolute; top: 14px; padding: 5px 10px; border-radius: 4px; background: #0b0d12cc; color: var(--ink); font-size: var(--text-small); font-weight: 600; letter-spacing: .08em; line-height: 1.6; text-transform: uppercase; pointer-events: none; }
+.image-compare-label-before { left: 14px; }
+.image-compare-label-after { right: 14px; }
+.image-compare-caption { margin-top: 12px; color: var(--muted); font-size: var(--text-small); line-height: 1.7; }
 .prose figcaption { color: var(--muted); font-size: var(--text-small); margin-top: 12px; }
 .prose hr { margin-block: 40px; background: var(--line); }
 .site-page .prose > :first-child { margin-top: 0; }
