@@ -265,6 +265,19 @@
 .image-compare-handle svg { width: 30px; height: 30px; }
 .site-page .prose .image-compare-side { display: block; position: relative; margin: 0; }
 .prose .image-compare-side img, .prose .image-compare-side video { display: block; width: 100%; border-radius: 0; }
+.site-page .prose .prompt-quote { position: relative; margin: 32px 0 0; padding: 20px 24px 20px 56px; border-left: 2px solid var(--accent); border-radius: 0 6px 6px 0; background: #151b29; }
+.prompt-quote::before { content: "\201C"; position: absolute; top: 6px; left: 16px; color: var(--accent); font-family: Georgia, serif; font-size: 3rem; line-height: 1; opacity: .7; }
+.prompt-quote-label { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-bottom: 8px; color: var(--accent); font-size: var(--text-small); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.prompt-quote-label span { color: var(--muted); }
+.site-page .prose .prompt-quote-text { margin: 0; padding: 0; border: 0; background: none; color: var(--ink); font-style: italic; line-height: 1.7; }
+.prompt-quote-text p { margin: 0; }
+.prompt-quote-text code { font-style: normal; }
+.site-page .prose .prompt-quote + .image-compare { margin-top: 24px; }
+.video-player-picker { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 12px; color: var(--muted); font-size: var(--text-small); font-weight: 600; }
+.site-page .video-player-select { max-width: 100%; min-height: 40px; margin: 0; padding: 0 12px; border: 1px solid #3b4358; border-radius: 5px; background: #0b0d12; color: #c5ccdf; font: inherit; color-scheme: dark; cursor: pointer; }
+.site-page .video-player-select:hover, .site-page .video-player-select:focus-visible { border-color: var(--accent); color: var(--ink); }
+.video-player video { width: 100%; background: #0b0d12; }
+.video-player-status { color: var(--muted); font-size: var(--text-small); }
 .video-compare-controls { display: flex; align-items: center; gap: 8px; margin-top: 12px; }
 .site-page .video-compare-controls button { display: inline-flex; align-items: center; justify-content: center; min-width: 36px; height: 32px; margin: 0; padding: 0 12px; border: 1px solid #3b4358; border-radius: 5px; background: transparent; color: #c5ccdf; font-size: var(--text-small); font-weight: 600; line-height: 1; }
 .site-page .video-compare-controls button:hover { border-color: var(--accent); color: var(--ink); }
