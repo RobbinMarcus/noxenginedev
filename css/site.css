@@ -273,7 +273,7 @@
 .prose blockquote { position: relative; margin: 32px 0; padding: 16px 24px; border-left: 2px solid var(--accent); background: #151b29; }
 .prose blockquote::before { content: none; }
 .prose code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-size: .85em; }
-.prose :not(pre) > code { color: #d1d8f5; background: #1c2335; padding: 3px 6px; border-radius: 4px; }
+.prose :not(pre) > code { color: #d1d8f5; background: #1c2335; padding: 3px 6px; border-radius: 4px; white-space: nowrap; overflow-wrap: normal; }
 .prose pre { max-width: 100%; padding: 22px; background: #121725; border: 1px solid #2d354a; border-radius: 6px; font-size: var(--text-ui); line-height: 1.7; overflow-x: auto; white-space: pre; overflow-wrap: normal; }
 .prose .highlight { margin-block: 32px; }
 .prose table { display: block; width: 100%; max-width: 100%; overflow-x: auto; border-collapse: collapse; font-size: var(--text-ui); margin-block: 32px; }
@@ -371,6 +371,7 @@
 }
 @media (max-width: 760px) {
     .page-width { width: calc(100% - 40px); }
+    .prose :not(pre) > code { white-space: normal; overflow-wrap: anywhere; }
     .section-space { padding-block: 70px; }
     .site-header { height: 78px; padding-inline: 16px; }
     .brand { font-size: 28px; }
